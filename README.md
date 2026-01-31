@@ -39,6 +39,20 @@ Open http://localhost:5173 in your browser.
 | `npm run lint` | Run linters with auto-fix |
 | `npm run type-check` | Run TypeScript type checking |
 
+## Deployment
+
+This app is configured to deploy to GitHub Pages automatically on push to the `main` branch.
+
+### Setup GitHub Pages
+
+1. Go to your repository settings on GitHub
+2. Navigate to **Settings** → **Pages**
+3. Under **Build and deployment**, set:
+   - **Source**: GitHub Actions
+4. Push to the `main` branch and the workflow will run automatically
+
+The app will be available at: `https://[username].github.io/mini-math/`
+
 ## Tech Stack
 
 - Vue 3 with Composition API
