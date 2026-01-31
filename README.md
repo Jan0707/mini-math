@@ -11,6 +11,7 @@ A fun math learning game for first-graders built with Vue 3 and TypeScript.
 - **Progress Tracking** - Session history saved locally
 - **Kid-Friendly Design** - Large touch targets, simple interface
 - **Dark Mode** - Automatic support based on system preference
+- **Progressive Web App** - Install on your device for native-like experience
 
 ## Game Flow
 
@@ -29,6 +30,26 @@ npm run dev
 
 Open http://localhost:5173 in your browser.
 
+## Progressive Web App (PWA)
+
+Mini Math can be installed on your device for a native app experience:
+
+### iOS (iPhone/iPad)
+1. Open the app in Safari
+2. Tap the Share button (square with arrow)
+3. Scroll down and tap "Add to Home Screen"
+4. Tap "Add"
+
+### Android
+1. Open the app in Chrome
+2. Tap the three-dot menu
+3. Tap "Install app" or "Add to Home Screen"
+
+Once installed, the app will:
+- Launch without browser chrome
+- Work offline with cached content
+- Appear on your home screen like a native app
+
 ## Scripts
 
 | Command | Description |
@@ -38,6 +59,7 @@ Open http://localhost:5173 in your browser.
 | `npm run preview` | Preview production build |
 | `npm run lint` | Run linters with auto-fix |
 | `npm run type-check` | Run TypeScript type checking |
+| `npm run generate-icons` | Generate PWA icons |
 
 ## Deployment
 

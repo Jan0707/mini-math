@@ -12,7 +12,10 @@
     "lint": "run-s lint:*",
     "lint:oxlint": "oxlint . --fix",
     "lint:eslint": "eslint . --fix --cache",
-    "format": "prettier --write --experimental-cli src/"
+    "format": "prettier --write --experimental-cli src/",
+    "generate-icons": "run-s generate-icons:*",
+    "generate-icons:svg": "node scripts/generate-icons.js",
+    "generate-icons:png": "node scripts/convert-icons.js"
   },
   "dependencies": {
     "vue": "^3.5.27",
@@ -32,6 +35,7 @@
     "npm-run-all2": "^8.0.4",
     "oxlint": "~1.42.0",
     "prettier": "3.8.1",
+    "sharp": "^0.34.5",
     "typescript": "~5.9.3",
     "vite": "^7.3.1",
     "vite-plugin-vue-devtools": "^8.0.5",
