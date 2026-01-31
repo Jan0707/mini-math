@@ -1,48 +1,48 @@
-# mini-math
+# Mini Math
 
-This template should help get you started developing with Vue 3 in Vite.
+A fun math learning game for first-graders built with Vue 3 and TypeScript.
 
-## Recommended IDE Setup
+## Features
 
-[VS Code](https://code.visualstudio.com/) + [Vue (Official)](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+- **Addition & Subtraction** - Practice plus, minus, or both operations
+- **Two Difficulty Levels** - Numbers 0-10 or 0-20
+- **Flexible Sessions** - Choose 5, 10, or 20 questions per game
+- **Instant Feedback** - See correct answers when you make mistakes
+- **Progress Tracking** - Session history saved locally
+- **Kid-Friendly Design** - Large touch targets, simple interface
+- **Dark Mode** - Automatic support based on system preference
 
-## Recommended Browser Setup
+## Game Flow
 
-- Chromium-based browsers (Chrome, Edge, Brave, etc.):
-  - [Vue.js devtools](https://chromewebstore.google.com/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd)
-  - [Turn on Custom Object Formatter in Chrome DevTools](http://bit.ly/object-formatters)
-- Firefox:
-  - [Vue.js devtools](https://addons.mozilla.org/en-US/firefox/addon/vue-js-devtools/)
-  - [Turn on Custom Object Formatter in Firefox DevTools](https://fxdx.dev/firefox-devtools-custom-object-formatters/)
+```
+Splash → Settings → Play → Results
+                            ↓
+                      Play Again
+```
 
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vite.dev/config/).
-
-## Project Setup
+## Getting Started
 
 ```sh
 npm install
-```
-
-### Compile and Hot-Reload for Development
-
-```sh
 npm run dev
 ```
 
-### Type-Check, Compile and Minify for Production
+Open http://localhost:5173 in your browser.
 
-```sh
-npm run build
-```
+## Scripts
 
-### Lint with [ESLint](https://eslint.org/)
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start development server |
+| `npm run build` | Build for production |
+| `npm run preview` | Preview production build |
+| `npm run lint` | Run linters with auto-fix |
+| `npm run type-check` | Run TypeScript type checking |
 
-```sh
-npm run lint
-```
+## Tech Stack
+
+- Vue 3 with Composition API
+- TypeScript
+- Vue Router
+- Vite
+- ESLint + oxlint + Prettier
