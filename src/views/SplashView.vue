@@ -6,6 +6,10 @@ const router = useRouter()
 function startGame() {
   router.push('/settings')
 }
+
+function viewHistory() {
+  router.push('/results')
+}
 </script>
 
 <template>
@@ -14,9 +18,14 @@ function startGame() {
       <h1 class="title">Mini Math</h1>
       <p class="tagline">Fun math practice for kids!</p>
     </div>
-    <button class="start-button" @click="startGame">
-      Start
-    </button>
+    <div class="buttons">
+      <button class="start-button" @click="startGame">
+        Start
+      </button>
+      <button class="history-button" @click="viewHistory">
+        History
+      </button>
+    </div>
   </div>
 </template>
 
@@ -53,12 +62,18 @@ function startGame() {
   margin: 0;
 }
 
-.start-button {
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+}
+
+.start-button,
+.history-button {
   padding: 1.25rem 3rem;
   font-size: 1.5rem;
   font-weight: bold;
-  background: var(--color-primary);
-  color: white;
   border: none;
   border-radius: 20px;
   cursor: pointer;
@@ -68,11 +83,26 @@ function startGame() {
   -webkit-tap-highlight-color: transparent;
 }
 
+.start-button {
+  background: var(--color-primary);
+  color: white;
+}
+
 .start-button:hover {
   background: var(--color-primary-hover);
 }
 
-.start-button:active {
+.history-button {
+  background: var(--color-background-mute);
+  color: var(--color-text);
+}
+
+.history-button:hover {
+  background: var(--color-border);
+}
+
+.start-button:active,
+.history-button:active {
   transform: scale(0.95);
 }
 

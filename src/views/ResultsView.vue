@@ -18,15 +18,14 @@ const scoreMessage = computed(() => {
   return 'Keep practicing!'
 })
 
+const hasHistory = computed(() => sessions.value.length > 0)
+
 const pastSessions = computed(() => {
   return sessions.value.slice(1)
 })
 
 onMounted(() => {
   loadSessions()
-  if (!latestSession.value) {
-    router.replace('/')
-  }
 })
 
 function playAgain() {
@@ -40,29 +39,44 @@ function goHome() {
 
 <template>
   <div class="results-view">
-    <h1 class="title">{{ scoreMessage }}</h1>
+    <template v-if="hasHistory">
+      <h1 class="title">{{ scoreMessage }}</h1>
 
-    <div v-if="latestSession" class="score-display">
-      <span class="score">{{ latestSession.score }}</span>
-      <span class="divider">/</span>
-      <span class="total">{{ latestSession.totalQuestions }}</span>
-    </div>
-
-    <div class="actions">
-      <button class="action-btn primary" @click="playAgain">
-        Play Again
-      </button>
-      <button class="action-btn secondary" @click="goHome">
-        Home
-      </button>
-    </div>
-
-    <div v-if="pastSessions.length > 0" class="history-section">
-      <h2 class="history-title">Past Games</h2>
-      <div class="history-list">
-        <SessionCard v-for="session in pastSessions" :key="session.id" :session="session" />
+      <div v-if="latestSession" class="score-display">
+        <span class="score">{{ latestSession.score }}</span>
+        <span class="divider">/</span>
+        <span class="total">{{ latestSession.totalQuestions }}</span>
       </div>
-    </div>
+
+      <div class="actions">
+        <button class="action-btn primary" @click="playAgain">
+          Play Again
+        </button>
+        <button class="action-btn secondary" @click="goHome">
+          Home
+        </button>
+      </div>
+
+      <div v-if="pastSessions.length > 0" class="history-section">
+        <h2 class="history-title">Past Games</h2>
+        <div class="history-list">
+          <SessionCard v-for="session in pastSessions" :key="session.id" :session="session" />
+        </div>
+      </div>
+    </template>
+
+    <template v-else>
+      <h1 class="title">History</h1>
+      <p class="empty-message">No games played yet!</p>
+      <div class="actions">
+        <button class="action-btn primary" @click="playAgain">
+          Play Now
+        </button>
+        <button class="action-btn secondary" @click="goHome">
+          Home
+        </button>
+      </div>
+    </template>
   </div>
 </template>
 
@@ -82,6 +96,13 @@ function goHome() {
   color: var(--color-primary);
   margin: 0;
   text-align: center;
+}
+
+.empty-message {
+  font-size: 1.25rem;
+  color: var(--color-text);
+  opacity: 0.7;
+  margin: 1rem 0;
 }
 
 .score-display {
